@@ -7,7 +7,7 @@ int main()
 {
 	float e, a, x, c, b, d, x1, x2;
 
-	cout << "What type the equation is?: 1,ax^2=c, 2.ax^2+bx=0, 3.ax^2+bx+c=0" << "\n";
+	cout << "What type the equation is?: 1,ax^2+c=0, 2.ax^2+bx=0, 3.ax^2+bx+c=0" << "\n";
 	cin >> e;
 	if (e == 1)
 	{
@@ -17,25 +17,32 @@ int main()
 		cin >> a;
 		cout << "Enter c " << "\n";
 		cin >> c;
-		if (c < 0 && a>0)
+		if (-c < 0 && a>0)
 		{
-			x = sqrt(-c / a);
-			cout << "x is Infinity in R " << "\n";
-			cout << "x is equal to +- " << x << "i in C" << "\n";
+			x = sqrt(c / a);
+			cout << "The equation is Impossible in R " << "\n";
+			cout << "x is equal to +-" << x << "i in C" << "\n";
 		}
-		else if (a == 0 && c != 0)
+		else if (-c > 0 && a < 0)
 		{
-			cout << "x is Infinity in R " << "\n";
+			x = sqrt(-c / -a);
+			cout << "The equation is Impossible in R " << "\n";
+			cout << "x is equal to +-" << x << "i in C" << "\n";
 		}
-		else if (a == 0 && c == 0)
+		else if (a == 0 && -c != 0)
 		{
-			cout << "Tautothta(x could be any number in R)" << "\n";
+			cout << "The equation is Impossible in R " << "\n";
+		}
+		else if (a == 0 && -c == 0)
+		{
+			cout << "The equation is an identity: it is true for all values" << "\n";
 		}
 		else {
-			x = sqrt(c / a);
+			x = sqrt(-c / a);
 			if (x == 0)
 			{
-				cout << "x is equal to " << x << "\n";
+
+				cout << "x is equal to " << 0 << "\n";
 			}
 			else {
 				cout << "x is equal to +-" << x << "\n";
@@ -55,7 +62,7 @@ int main()
 		cin >> b;
 		if (a == 0 && b == 0)
 		{
-			cout << "Tautothta(x could be any number in R)" << "\n";
+			cout << "The equation is an identity: it is true for all values" << "\n";
 		}
 		else if (a != 0 && b == 0 || a == 0 && b != 0)
 		{
@@ -87,7 +94,7 @@ int main()
 		}
 		else if (a == 0 && b == 0 && c != 0)
 		{
-			cout << "The equation is a contradiction in R: it has no solutions " << "\n";
+			cout << "The equation is Impossible R " << "\n";
 		}
 		else if (a == 0 && b != 0 && c == 0 || a == 0 && b != 0 && c != 0)
 		{
@@ -99,14 +106,20 @@ int main()
 			x = sqrt(-c / a);
 			if (x == 0)
 			{
-				x = 0;//Μπαινει γιατι εκτυπωνε -0 λογω του -c στη γραμμη 97  
-				cout << "x is equal to " << x << "\n";
+				//Μπαινει γιατι εκτυπωνε -0 λογω του -c στη γραμμη 97  
+				cout << "x is equal to " << 0 << "\n";
 			}
 			else if (-c < 0 && a>0)
 			{
 				x = sqrt(c / a);
-				cout << "The equation is a contradiction in R : it has no solutions " << "\n";
-				cout << "x is equal to +- " << x << "i in C" << "\n";
+				cout << "The equation is Impossible in R " << "\n";
+				cout << "x is equal to +-" << x << "i in C" << "\n";
+			}
+			else if (-c > 0 && a < 0)
+			{
+				x = sqrt(-c / -a);
+				cout << "The equation is Impossible in R " << "\n";
+				cout << "x is equal to +-" << x << "i in C" << "\n";
 			}
 			else {
 				cout << "x is equal to +- " << x << "\n";
@@ -115,7 +128,7 @@ int main()
 		}
 		else if (d < 0)
 		{
-			cout << "D=" << d << "<0 " << "x is Infinity in R " << "\n" << endl;
+			cout << "D=" << d << "<0 " << "The equation is Impossible in R " << "\n" << endl;
 			x1 = (-b - sqrt(-d)) / (2 * a);
 			x2 = (-b + sqrt(-d)) / (2 * a);
 			cout << "x is equal to " << x1 << " or " << x2 << " in C " << "\n";
