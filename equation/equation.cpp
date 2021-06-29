@@ -19,7 +19,9 @@ int main()
 		cin >> c;
 		if (c < 0 && a>0)
 		{
+			x = sqrt(-c / a);
 			cout << "x is Infinity in R " << "\n";
+			cout << "x is equal to +- " << x << "i in C" << "\n";
 		}
 		else if (a == 0 && c != 0)
 		{
@@ -102,7 +104,9 @@ int main()
 			}
 			else if (-c < 0 && a>0)
 			{
+				x = sqrt(c / a);
 				cout << "The equation is a contradiction in R : it has no solutions " << "\n";
+				cout << "x is equal to +- " << x << "i in C" << "\n";
 			}
 			else {
 				cout << "x is equal to +- " << x << "\n";
