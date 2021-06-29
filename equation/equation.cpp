@@ -100,6 +100,10 @@ int main()
 				x = 0;//Μπαινει γιατι εκτυπωνε -0 λογω του -c στη γραμμη 97  
 				cout << "x is equal to " << x << "\n";
 			}
+			else if (-c < 0 && a>0)
+			{
+				cout << "The equation is a contradiction in R : it has no solutions " << "\n";
+			}
 			else {
 				cout << "x is equal to +- " << x << "\n";
 			}
